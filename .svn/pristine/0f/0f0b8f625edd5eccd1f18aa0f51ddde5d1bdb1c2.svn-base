@@ -1,0 +1,5 @@
+<?php
+//$connect_error = '<strong>Sorry, we\'re experiencing SQL connection problems.</strong>';
+//mysql_connect('localhost','root','') or die($connect_error);
+//mysql_select_db('login') or die($connect_error);
+?>

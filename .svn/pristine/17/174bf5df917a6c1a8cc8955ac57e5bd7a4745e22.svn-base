@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<?php
+include 'core/init.php';
+include 'include/head.php';
+?>
+   <body>
+
+         <div class="page-container">
+            <h1>Information uploaded. It will take 24 hours to comfirm. Thank you.</h1>
+			<button type="sbumit" onClick="window.location.href='index.php';">BACK TO LOG IN</button>
+			
+			
+			
+			
+			
+			        <!-- Javascript -->
+        <script src="assets/js/jquery-1.8.2.min.js"></script>
+        <script src="assets/js/supersized.3.2.7.min.js"></script>
+        <script src="assets/js/supersized-init.js"></script>
+        <script src="assets/js/scripts.js"></script>
+
+    </body>
+
+</html>
