@@ -35,7 +35,7 @@ $tmp_name = $_FILES['file']['tmp_name'];
 if (isset($name)){
 	if(!empty($name)){
 		if (($extension=='jpg'||$extension=='jpeg')&&$type=='image/jpeg'&&$sinze<=$max_size){
-	$location = 'upload/';
+	$location = 'https://datab.blob.core.windows.net/pic/';
 	if (move_uploaded_file($tmp_name, $location.$name)){
 		echo 'File Have Been Uploaded.';
 	}else{
