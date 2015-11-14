@@ -7,7 +7,7 @@ use WindowsAzure\Common\ServiceException;
 $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
 
-$content = fopen("c:\myfile.txt", "r");
+$content = fopen("HaxLogs.txt", "r");
 $blob_name = "myblob";
 
 try {
