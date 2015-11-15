@@ -10,7 +10,7 @@ $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionSt
 
 try {
     // List blobs.
-    $blob_list = $blobRestProxy->listBlobs("mycontainer");
+    $blob_list = $blobRestProxy->listBlobs("afsfe");
     $blobs = $blob_list->getBlobs();
 
     foreach($blobs as $blob)
