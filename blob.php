@@ -15,7 +15,7 @@ $blob_name = "myblob";
 
 try {
     //Upload blob
-    $blobRestProxy->createBlockBlob("pic", $blob_name, $content);
+    $blobRestProxy->createBlockBlob("iogj", $blob_name, $content);
 }
 
 catch(ServiceException $e){
