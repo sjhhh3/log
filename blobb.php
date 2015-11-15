@@ -8,20 +8,15 @@ use WindowsAzure\Common\ServiceException;
 $connectionString = 'DefaultEndpointsProtocol=https;AccountName=datab;AccountKey=Gr+c6yEphuffTGSg1tVIKnOchH931afSEmIWoHhWt1aIFPUD7brmTNd2dzNJAWgIZaAa5BTWcXtAjjVwB9wVVQ==';
 $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
-try {
-    // List blobs.
-    $blob_list = $blobRestProxy->listBlobs("afsfe");
-    $blobs = $blob_list->getBlobs();
 
-    foreach($blobs as $blob)
-    {
-        echo $blob->getName().": ".$blob->getUrl()."<br />";
-    }
+try {
+    // Delete container.
+    $blobRestProxy->deleteContainer("mycontainer");
 }
 catch(ServiceException $e){
     // Handle exception based on error codes and messages.
-    // Error codes and messages are here:
-    // http://msdn.microsoft.com/library/azure/dd179439.aspx
+    // Error codes and messages are here: 
+    // http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
     $code = $e->getCode();
     $error_message = $e->getMessage();
     echo $code.": ".$error_message."<br />";
