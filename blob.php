@@ -9,4 +9,7 @@ if (logged_in() === false){
 	exit();
 }
 echo "1";
+
+echo $user_data['user_id']; 
+echo "2";
 ?>
