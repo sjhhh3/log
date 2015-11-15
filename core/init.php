@@ -8,6 +8,8 @@ require 'functions/users.php';
 if (logged_in() === ture) {
   $session_user_id = $_SESSION['user_id'];
   $user_data = user_data($session_user_id, 'user_id', 'username', 'password', 'firstname', 'lastname', 'email', 'active', 'profile');
+
+  echo $user_data['username'];
 }
 //$errors = array();
 ?>
