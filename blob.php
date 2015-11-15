@@ -12,7 +12,7 @@ echo"3";
 
 $content = fopen("c:\HaxLogs.txt", "r");
 $blob_name = "myblob";
-
+echo"4";
 try {
     //Upload blob
     $blobRestProxy->createBlockBlob("pic", $blob_name, $content);
