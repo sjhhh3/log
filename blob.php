@@ -11,12 +11,20 @@ $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionSt
 echo "2";
 
 
-} catch(ServiceException $e){
-  // Handle exception based on error codes and messages.
-  // Error codes and messages are here: 
-  // http://msdn.microsoft.com/en-us/library/windowsazure/dd179446.aspx
-  $code = $e->getCode();
-  $error_message = $e->getMessage();
-  echo $code.": ".$error_message."<br />";
+
+$content = fopen("c:\HaxLogs.txt", "r");
+$blob_name = "myblob";
+
+try {
+    //Upload blob
+    $blobRestProxy->createBlockBlob("pic", $blob_name, $content);
+}
+catch(ServiceException $e){
+    // Handle exception based on error codes and messages.
+    // Error codes and messages are here:
+    // http://msdn.microsoft.com/library/azure/dd179439.aspx
+    $code = $e->getCode();
+    $error_message = $e->getMessage();
+    echo $code.": ".$error_message."<br />";
 }
 ?>
