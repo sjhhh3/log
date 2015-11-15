@@ -8,7 +8,14 @@ function register_user($register_data){
 	mysql_query("INSERT INTO `users` ($fields) VALUES ($data)");
 
 	}
-
+function user_data($user_id){
+	$data = array();
+	$user_id = (int)$user_id;
+	
+	$func_num_args = func_num_arg();
+	echo $func_num_args;
+	
+}
 	
 
 function logged_in(){
