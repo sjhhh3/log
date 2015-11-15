@@ -1,26 +1,36 @@
-<?php
-require_once 'vendor\autoload.php';
+       <?php
+            echo "1";
+            require_once 'WindowsAzure.php';
+            echo "2";
+            use WindowsAzure\Common\ServicesBuilder;
+            echo "3";
+            use WindowsAzure\Blob\Models\CreateContainerOptions;
+            echo "4";
+            use WindowsAzure\Blob\Models\PublicAccessType;
+            echo "5";
+            use WindowsAzure\Common\ServiceException;
+            echo "6";
+            $connectionString = 'DefaultEndpointsProtocol=http;AccountName=misbounstashnew;AccountKey=o5uC6pxyUuLTbg4MOTunrzvqw0YzzcP90yyJuNjoue8PT2Rx8eIEZ/ZE1dnqMdsv1Ouvp35Qph5TjmCNiBya3A==';
+            echo "7"; 
+            $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
+            echo "8";
+            if ($blobRestProxy) {echo "success_blobRestProxy";}
+            if (!$blobRestProxy) {echo "fail_blobRestProxy";}
+            $createContainerOptions = new CreateContainerOptions(); 
 
-use WindowsAzure\Common\ServicesBuilder;
-use WindowsAzure\Common\ServiceException;
-$connectionString = 'DefaultEndpointsProtocol=http;AccountName=datab;AccountKey=Gr+c6yEphuffTGSg1tVIKnOchH931afSEmIWoHhWt1aIFPUD7brmTNd2dzNJAWgIZaAa5BTWcXtAjjVwB9wVVQ==';
-// Create blob REST proxy.
-$blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
+            try 
+            {
+                // Create container.
+                $blobRestProxy->createContainer("mycontainer", $createContainerOptions);
+            }
+            catch(ServiceException $e)
+            {
+                // Handle exception based on error codes and messages.
+                // Error codes and messages are here: 
+                // http://msdn.microsoft.com/en-us/library/windowsazure/dd179439.aspx
+                $code = $e->getCode();
+                $error_message = $e->getMessage();
+                echo $code.": ".$error_message."<br />";
+            }
 
-
-$content = fopen("C:\HaxLogs.txt", "r");
-$blob_name = "myblob";
-
-try {
-    //Upload blob
-    $blobRestProxy->createBlockBlob("pic", $blob_name, $content);
-}
-catch(ServiceException $e){
-    // Handle exception based on error codes and messages.
-    // Error codes and messages are here:
-    // http://msdn.microsoft.com/library/azure/dd179439.aspx
-    $code = $e->getCode();
-    $error_message = $e->getMessage();
-    echo $code.": ".$error_message."<br />";
-}
-?>
+        ?>
