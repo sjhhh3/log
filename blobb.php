@@ -1,3 +1,4 @@
+<?php
 require_once 'vendor\autoload.php';
 
 use WindowsAzure\Common\ServicesBuilder;
@@ -6,8 +7,8 @@ use WindowsAzure\Blob\Models\PublicAccessType;
 use WindowsAzure\Common\ServiceException;
 
 // Create blob REST proxy.
+$connectionString = 'DefaultEndpointsProtocol=https;AccountName=datab;AccountKey=Gr+c6yEphuffTGSg1tVIKnOchH931afSEmIWoHhWt1aIFPUD7brmTNd2dzNJAWgIZaAa5BTWcXtAjjVwB9wVVQ==';
 $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
-
 
 // OPTIONAL: Set public access policy and metadata.
 // Create container options object.
@@ -45,3 +46,4 @@ catch(ServiceException $e){
     $error_message = $e->getMessage();
     echo $code.": ".$error_message."<br />";
 }
+?>
