@@ -9,7 +9,7 @@ $connectionString = 'DefaultEndpointsProtocol=https;AccountName=datab;AccountKey
 $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
 
-$content = fopen("D:\myfile.txt", "r");
+$content = fopen("WindowsAzure\LICENSE.txt", "r");
 $blob_name = "myblob";
 
 try {
