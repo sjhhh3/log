@@ -55,9 +55,6 @@ if (isset($name)){
 			<br><button>UPLOAD</button></form>
 			
 			
-				
-			<h1>Here.</h1>
-			<?php echo $user_data['user_id']; ?>
 	
         <script src="assets/js/jquery-1.8.2.min.js"></script>
         <script src="assets/js/supersized.3.2.7.min.js"></script>
