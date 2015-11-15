@@ -9,7 +9,7 @@ $connectionString = 'DefaultEndpointsProtocol=https;AccountName=datab;AccountKey
 $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
 
-$content = file_get_contents(".\app.txt", "r");
+$content = file_get_contents("./app.txt", "r");
 $blob_name = "myblob";
 
 try {
