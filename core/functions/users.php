@@ -10,7 +10,11 @@ function register_user($register_data){
 	}
 
 function user_data($user_id){
+	$data = array();
+	$user_id = (int)$user_id;
 	
+	$func_num_args = func_num_args();
+	echo $func_num_args;
 };
 	
 
