@@ -1,24 +1,27 @@
 <?php
-require_once 'vendor\autoload.php';
+require_once 'vendor/autoload.php';
 
-use WindowsAzure\Common\ServicesBuilder;
-use WindowsAzure\Common\ServiceException;
+use WindowsAzure/Common/ServicesBuilder;
+use WindowsAzure/Common/ServiceException;
 
 // Create blob REST proxy.
-$connectionString = 'DefaultEndpointsProtocol=https;AccountName=datab;AccountKey=Gr+c6yEphuffTGSg1tVIKnOchH931afSEmIWoHhWt1aIFPUD7brmTNd2dzNJAWgIZaAa5BTWcXtAjjVwB9wVVQ==';
 $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
-$content = file_get_contents("c:\myfile.txt");
-$blob_name = "myblob";
 
 try {
-    //Upload blob
-    $blobRestProxy->createBlockBlob("mycontainer", $blob_name, $content);
+    // List blobs.
+    $blob_list = $blobRestProxy->listBlobs("mycontainer");
+    $blobs = $blob_list->getBlobs();
+
+    foreach($blobs as $blob)
+    {
+        echo $blob->getName().": ".$blob->getUrl()."<br />";
+    }
 }
 catch(ServiceException $e){
     // Handle exception based on error codes and messages.
-    // Error codes and messages are here:
-    // http://msdn.microsoft.com/library/azure/dd179439.aspx
+    // Error codes and messages are here: 
+    // http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
     $code = $e->getCode();
     $error_message = $e->getMessage();
     echo $code.": ".$error_message."<br />";
