@@ -1,6 +1,6 @@
 <?php
 echo "a";
-require_once 'vendor\autoload.php';
+require_once 'autoload.php';
 echo "0";
 use WindowsAzure\Common\ServicesBuilder;
 try {
