@@ -8,7 +8,7 @@ use WindowsAzure\Common\ServiceException;
 $connectionString = 'DefaultEndpointsProtocol=https;AccountName=datab;AccountKey=Gr+c6yEphuffTGSg1tVIKnOchH931afSEmIWoHhWt1aIFPUD7brmTNd2dzNJAWgIZaAa5BTWcXtAjjVwB9wVVQ==';
 $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
-$content = fopen("c:\myfile.txt", "r");
+$content = file_get_contents("c:\myfile.txt");
 $blob_name = "myblob";
 
 try {
