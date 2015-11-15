@@ -16,8 +16,9 @@ echo"4";
 try {
     //Upload blob
     $blobRestProxy->createBlockBlob("pic", $blob_name, $content);
+    echo"5";
 }
-echo"5";
+
 catch(ServiceException $e){
     // Handle exception based on error codes and messages.
     // Error codes and messages are here:
