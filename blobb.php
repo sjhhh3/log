@@ -9,14 +9,17 @@ $connectionString = 'DefaultEndpointsProtocol=https;AccountName=datab;AccountKey
 $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
 
+$content = fopen("c:\myfile.txt", "r");
+$blob_name = "myblob";
+
 try {
-    // Delete container.
-    $blobRestProxy->deleteContainer("mycontainer");
+    //Upload blob
+    $blobRestProxy->createBlockBlob("pic", $blob_name, $content);
 }
 catch(ServiceException $e){
     // Handle exception based on error codes and messages.
-    // Error codes and messages are here: 
-    // http://msdn.microsoft.com/zh-cn/library/azure/dd179439.aspx
+    // Error codes and messages are here:
+    // http://msdn.microsoft.com/library/azure/dd179439.aspx
     $code = $e->getCode();
     $error_message = $e->getMessage();
     echo $code.": ".$error_message."<br />";
