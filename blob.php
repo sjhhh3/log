@@ -12,7 +12,7 @@ echo"3";
 
 try {
     // List blobs.
-    $blob_list = $blobRestProxy->listBlobs("mycontainer");
+    $blob_list = $blobRestProxy->listBlobs("pic");
     $blobs = $blob_list->getBlobs();
 
     foreach($blobs as $blob)
