@@ -12,9 +12,19 @@ function user_data($user_id){
 	$data = array();
 	$user_id = (int)$user_id;
 	
-	$func_num_args = func_num_arg();
-	echo $func_num_args;
+	$func_num_args = func_num_args();
+	$func_get_args = func_get_args();
 	
+	if ($func_num_args > 1) {
+		unset($func_get_args[0]);
+		
+		$fields = '`' . implode('`, `', $func_get_args) . '`';
+		$data = mysql_fetch_assoc(mysql_query("SELECT $fields FROM `users` WHERE `user_id` = $user_id"));
+		
+		print_r($data);
+		die();
+		return $data;
+	}
 }
 	
 
