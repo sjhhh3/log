@@ -1,5 +1,6 @@
        <?php
-
+            echo "1";
+            require_once 'WindowsAzure.php';
             echo "2";
             use WindowsAzure\Common\ServicesBuilder;
             echo "3";
