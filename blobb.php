@@ -9,7 +9,7 @@ $connectionString = 'DefaultEndpointsProtocol=https;AccountName=datab;AccountKey
 $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 
 
-$content = file_get_contents("\vendor\microsoft\windowszure\changelog.txt");
+$content = file_get_contents("D:\myfile.txt");
 $blob_name = "myblob";
 
 try {
