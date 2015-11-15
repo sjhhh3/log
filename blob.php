@@ -6,7 +6,7 @@ use WindowsAzure\Common\ServicesBuilder;
 use WindowsAzure\Common\ServiceException;
 echo"2";
 // Create blob REST proxy.
-$connectionString = 'DefaultEndpointsProtocol=https;AccountName=account name;AccountKey=account key';
+$connectionString = 'DefaultEndpointsProtocol=https;AccountName=datab;AccountKey=Gr+c6yEphuffTGSg1tVIKnOchH931afSEmIWoHhWt1aIFPUD7brmTNd2dzNJAWgIZaAa5BTWcXtAjjVwB9wVVQ==';
 $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 echo"3";
 
