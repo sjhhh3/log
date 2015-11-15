@@ -9,14 +9,6 @@ function register_user($register_data){
 
 	}
 	
-fuchtion user_data($user_id){
-	$data = array();
-	$user_id = (int)$user_id;
-	$func_num_args = func_num_args();
-	$func_get_args = func_get_args();
-	
-	print_r($func_get_args)
-}
 
 function logged_in(){
 	return (isset($_SESSION['user_id'])) ? true : false;
