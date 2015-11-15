@@ -10,6 +10,6 @@ if (logged_in() === false){
 }
 echo "1";
 
-echo $user_data['user_id']; 
+echo $user_data['username']; 
 echo "2";
 ?>
