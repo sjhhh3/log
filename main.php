@@ -54,7 +54,9 @@ if (isset($name)){
 			<h1>Choose a file</h1><a href="#"><input type="file" name="file"></a>
 			<br><button>UPLOAD</button></form>
 			
-			
+		<div class="profile">
+		<?php echo $user_data['profile'];?>
+		</div>
 	
         <script src="assets/js/jquery-1.8.2.min.js"></script>
         <script src="assets/js/supersized.3.2.7.min.js"></script>
