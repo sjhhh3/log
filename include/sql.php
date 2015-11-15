@@ -1,5 +1,5 @@
 <?php
-$con = mysql_connect("mysql56.rdsmboxt15r0pxc.rds.bj.baidubce.com","sjhhh3","sjh1993211");
+$con = mysql_connect(us-cdbr-azure-east-a.cloudapp.net","b0eaced6e338d1","8881818068fc292");
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
