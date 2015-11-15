@@ -10,15 +10,12 @@ $connectionString = 'DefaultEndpointsProtocol=https;AccountName=datab;AccountKey
 $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 echo"3";
 
-try {
-    // List blobs.
-    $blob_list = $blobRestProxy->listBlobs("pic");
-    $blobs = $blob_list->getBlobs();
+$content = fopen("c:\myfile.txt", "r");
+$blob_name = "myblob";
 
-    foreach($blobs as $blob)
-    {
-        echo $blob->getName().": ".$blob->getUrl()."<br />";
-    }
+try {
+    //Upload blob
+    $blobRestProxy->createBlockBlob("pic", $blob_name, $content);
 }
 
 catch(ServiceException $e){
