@@ -5,7 +5,7 @@ echo "0";
 use WindowsAzure\Common\ServicesBuilder;
 try {
 
-$connectionString = 'DefaultEndpointsProtocol=http;AccountName=datab;AccountKey=Gr+c6yEphuffTGSg1tVIKnOchH931afSEmIWoHhWt1aIFPUD7brmTNd2dzNJAWgIZaAa5BTWcXtAjjVwB9wVVQ==';
+$connectionString = 'DefaultEndpointsProtocol=https;AccountName=datab;AccountKey=Gr+c6yEphuffTGSg1tVIKnOchH931afSEmIWoHhWt1aIFPUD7brmTNd2dzNJAWgIZaAa5BTWcXtAjjVwB9wVVQ==';
 echo "1";
 
 $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
