@@ -54,7 +54,7 @@ if (isset($name)){
 ?>
             <h1>Logged In. Please Upload Your File.</h1><br><br>
 			<form action="main.php" method="POST" enctype="multipart/form-data">
-			<h1>Choose a file</h1><a href="#"><input type="file" name="name"></a>
+			<h1>Choose a file</h1><a href="#"><input type="file" name="file"></a>
 			<br><button>UPLOAD</button></form>
 		
 		<?php ?>
