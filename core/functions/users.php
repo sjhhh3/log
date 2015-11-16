@@ -1,4 +1,8 @@
 <?php
+function change_profile_image($user_id, $temp_name, $extension){
+	$file_path = '/images' .substr(md5(time()), 0, 10) . '.' . $extension;
+	echo $file_path;
+}
 function register_user($register_data){
 	array_walk($register_data, 'array_sanitize');
 	$register_data['password'] = md5($register_data['password']);
