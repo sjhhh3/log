@@ -56,9 +56,7 @@ if (isset($name)){
 			
 		<div class="profile">
 		<?php 
-		if (empty($user_data['profile']) ===false){
-			echo '<img src="', $user_data['profile'], '" alt="', $user_data['firstname'],'\'s Profile Image">'
-		}
+		
 		?>
 		</div>
 	
