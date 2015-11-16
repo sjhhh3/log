@@ -1,6 +1,6 @@
 <?php
 function change_profile_image($user_id, $tmp_name, $extension, $md5_name){
-	$file_path = 'upload/' . $md5_name . '.' . $extension;
+	$file_path = 'log/upload/' . $md5_name . '.' . $extension;
 	echo $file_path;
 	mysql_query("UPDATE `users` SET `profile` = '" . $file_path . "' WHERE `user_id` = " . (int)$user_id);
 }
