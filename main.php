@@ -35,7 +35,7 @@ $tmp_name = $_FILES['file']['tmp_name'];
 if (isset($name)){
 	if(!empty($name)){
 		if (($extension=='jpg'||$extension=='jpeg')&&$type=='image/jpeg'&&$sinze<=$max_size){
-        $location = 'upload/';
+
 	
 	change_profile_image($session_user_id, $tmp_name, $extension);
 	
