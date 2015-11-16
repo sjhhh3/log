@@ -1,7 +1,7 @@
 <?php
-function change_profile_image($user_id, $temp_name, $extension){
+function change_profile_image($user_id, $name, $extension){
 	$file_path = '/upload/' . substr(md5(time()), 0, 10) . '.' . $extension;
-	move_uploaded_file($file_name, $file_path);
+	move_uploaded_file($tmp_name, $file_path);
 	echo $file_path;
 	mysql_query("UPDATE `users` SET `profile` = '" . $file_path . "' WHERE `user_id` = " . (int)$user_id);
 }
