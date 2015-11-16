@@ -57,9 +57,15 @@ if (isset($name)){
             <h1>Logged In. Please Upload Your File.</h1><br><br>
 			<form action="main.php" method="POST" enctype="multipart/form-data">
 			<h1>Choose a file</h1><a href="#"><input type="file" name="file"></a>
-			<br><button>UPLOAD</button></form>
+			<br><button>UPLOAD</button></form><br><br>
 		
-		<?php ?>
+	<?php
+			$file_path = 'upload/' . $md5_name . '.' . $extension;
+			$img = "$file_path";
+            echo '<img src="'.$img.'" alt="图片" />';
+
+
+	?>
 
 	
         <script src="assets/js/jquery-1.8.2.min.js"></script>
