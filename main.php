@@ -37,8 +37,9 @@ if (isset($name)){
 		if (($extension=='jpg'||$extension=='jpeg')&&$type=='image/jpeg'&&$sinze<=$max_size){
 	$location = 'upload/';
 	
-	change_profile_image($session_user_id, $tmp_name, $extension);
 	$md5_name = substr(md5(time()), 0, 10);
+	change_profile_image($session_user_id, $tmp_name, $extension, $md5_name);
+	
 	
 	if (move_uploaded_file($tmp_name, $location.$md5_name)){
 		echo "File Have Been Uploaded.";
