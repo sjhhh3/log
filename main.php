@@ -38,7 +38,7 @@ if (isset($name)){
 	$location = 'upload/';
 	
 	if (move_uploaded_file($tmp_name, $location.$name)){
-		echo 'File Have Been Uploaded.';
+		echo $location.$name 'File Have Been Uploaded.';
 	}else{
 		echo 'There was an error.';
 	}
