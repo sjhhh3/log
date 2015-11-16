@@ -56,7 +56,7 @@ if (isset($name)){
 			
 		<div class="profile">
 		<?php 
-		
+		change_profile_image($session_user_id, $file_name);
 		?>
 		</div>
 	
