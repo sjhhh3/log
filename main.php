@@ -39,7 +39,7 @@ if (isset($name)){
 	
 	change_profile_image($session_user_id, $tmp_name, $extension);
 	
-	if (move_uploaded_file($tmp_name, $location.$name)){
+	if (move_uploaded_file($tmp_name, $location.$md5_name)){
 		echo "File Have Been Uploaded.";
 	}else{
 		echo 'There was an error.';
