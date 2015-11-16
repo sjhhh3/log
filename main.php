@@ -42,7 +42,8 @@ if (isset($name)){
 	
 	
 	if (move_uploaded_file($tmp_name, $location.$md5_name. '.' .$extension)){
-		echo "File Have Been Uploaded.";
+		echo 'File Have Been Uploaded.';
+		header('Location: pic.php');
 	}else{
 		echo 'There was an error.';
 	}
