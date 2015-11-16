@@ -36,6 +36,7 @@ if (isset($name)){
 	if(!empty($name)){
 		if (($extension=='jpg'||$extension=='jpeg')&&$type=='image/jpeg'&&$sinze<=$max_size){
 	$location = 'upload/';
+	change_profile_image($session_user_id, $file_name, $extension);
 	if (move_uploaded_file($tmp_name, $location.$name)){
 		echo 'File Have Been Uploaded.';
 	}else{
@@ -54,11 +55,7 @@ if (isset($name)){
 			<h1>Choose a file</h1><a href="#"><input type="file" name="file"></a>
 			<br><button>UPLOAD</button></form>
 			
-		<div class="profile">
-		<?php 
-		change_profile_image($session_user_id, $file_name, $extension);
-		?>
-		</div>
+
 	
         <script src="assets/js/jquery-1.8.2.min.js"></script>
         <script src="assets/js/supersized.3.2.7.min.js"></script>
