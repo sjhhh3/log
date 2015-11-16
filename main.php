@@ -55,7 +55,11 @@ if (isset($name)){
 			<br><button>UPLOAD</button></form>
 			
 		<div class="profile">
-		<?php echo $user_data['profile'];?>
+		<?php 
+		if (empty($user_data['profile']) ===false){
+			echo '<img src="', $user_data['profile'], '" alt="', $user_data['firstname'],'\'s Profile Image">'
+		}
+		?>
 		</div>
 	
         <script src="assets/js/jquery-1.8.2.min.js"></script>
