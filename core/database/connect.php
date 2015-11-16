@@ -5,4 +5,4 @@ mysql_connect("civile.rdsmz5f4ywl100h.rds.bj.baidubce.com","sjhhh3","sjh1993211"
 mysql_select_db('login') or die($connect_error2);
 ?>
 
-//"us-cdbr-azure-east-a.cloudapp.net","b0eaced6e338d1","8881818068fc292"
+/*"us-cdbr-azure-east-a.cloudapp.net","b0eaced6e338d1","8881818068fc292"*/
