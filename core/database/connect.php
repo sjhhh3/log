@@ -4,6 +4,3 @@ $connect_error2 = '<strong>Sorry, we\'re experiencing DB connection problems.</s
 mysql_connect("us-cdbr-azure-east-a.cloudapp.net","b0eaced6e338d1","8881818068fc292") or die($connect_error);
 mysql_select_db('civile') or die($connect_error2);
 ?>
-
-// civile.rdsmz5f4ywl100h.rds.bj.baidubce.com","sjhhh3","sjh1993211
-us-cdbr-azure-east-a.cloudapp.net","b0eaced6e338d1","8881818068fc292
