@@ -3,7 +3,7 @@ function change_profile_image($user_id, $tmp_name, $extension){
 	$file_path = '/upload/' . substr(md5(time()), 0, 10) . '.' . $extension;
 	$md5_name = substr(md5(time()), 0, 10);
 	move_uploaded_file($tmp_name, $file_path);
-	echo $md5_name;
+	echo $file_path;
 	mysql_query("UPDATE `users` SET `profile` = '" . $file_path . "' WHERE `user_id` = " . (int)$user_id);
 }
 function register_user($register_data){
