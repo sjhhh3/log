@@ -1,5 +1,5 @@
 <?php
-function change_profile_image($user_id, $name, $extension){
+function change_profile_image($user_id, $tmp_name, $extension){
 	$file_path = '/upload/' . substr(md5(time()), 0, 10) . '.' . $extension;
 	move_uploaded_file($tmp_name, $file_path);
 	echo $file_path;
