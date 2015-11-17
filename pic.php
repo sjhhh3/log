@@ -51,7 +51,6 @@ catch(ServiceException $e){
 }
         ?>
         
-        <button type="sbumit" onClick="window.location.href='result.php';">Download Result</button>
         
         
         <script src="assets/js/jquery-1.8.2.min.js"></script>
