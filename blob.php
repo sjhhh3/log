@@ -7,7 +7,7 @@ $connectionString = 'DefaultEndpointsProtocol=https;AccountName=datab;AccountKey
 $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 try {
     // Get blob.
-    $blob = $blobRestProxy->getBlob("pic", "55e7e83c09.jpg");
+    $blob = $blobRestProxy->getBlob("pic", "myblob2");
     fpassthru($blob->getContentStream());
 }
 catch(ServiceException $e){
