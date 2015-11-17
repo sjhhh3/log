@@ -10,6 +10,21 @@ try {
     $blob = $blobRestProxy->getBlob("pic", "myblob2");
     fpassthru($blob->getContentStream());
 }
+
+ //设文件名为test.php
+$data=file_get_contents("myblob2");
+$im = imagecreatefromstring($data);
+if ($im !== false) {
+    header('Content-Type: image/jpeg'); //对应jpeg的类型
+    imagejpeg($im);////也要对应jpeg的类型
+    imagedestroy($im);
+}
+else {
+    echo '图片未读入';
+}
+
+=========
+然后再另一个html或php中写上<img src='test.php' />显示该图片
 catch(ServiceException $e){
     // Handle exception based on error codes and messages.
     // Error codes and messages are here:
