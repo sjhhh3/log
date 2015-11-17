@@ -35,7 +35,7 @@ $name = "myblob2.jpg";
 $fp = fopen($name, 'rb');
 
 // 发送合适的报头
-header("Content-Type: image/png");
+header("Content-Type: image/jpg");
 header("Content-Length: " . filesize($name));
 
 // 发送图片并终止脚本
