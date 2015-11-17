@@ -29,30 +29,7 @@
         </br></br></br><h1>The Result Is Downloading.</h1></br></br></br>
         
 <?php
- header("Content-type=html/text;charset=utf-8");
-// 以二进制格式打开文件
-$name = "myblob2.jpg";
-$fp = fopen($name, 'r');
-
-// 发送合适的报头
-header("Content-Type: image/jpg");
-header("Content-Length: " . filesize($name));
-
-// 发送图片并终止脚本
-//fpassthru($fp);
-
- $filename=realpath("$name"); //文件名
- $date=date("Ymd-H:i:m");
- Header( "Content-type:  application/octet-stream "); 
- Header( "Accept-Ranges:  bytes "); 
- Header( "Accept-Length: " .filesize($filename));
- header( "Content-Disposition:  attachment;  filename= {$date}.jpg"); 
- echo file_get_contents($filename);
- readfile($filename); 
-
-downfile();
-//exit;
-
+ echo "./abcd.rar";
 ?>
 
         
