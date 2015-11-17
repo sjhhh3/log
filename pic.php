@@ -26,7 +26,7 @@
             echo '<img src="'.$img.'" alt="图片" />';
 			?>
 
-        <br><br><br><h1>This Image Has Alreday Uploaded To The Cloud.</h1>
+        </br></br></br><h1>This Image Has Alreday Uploaded To The Cloud.</h1></br></br></br>
         
         <?php
         require_once 'vendor\autoload.php';
@@ -51,7 +51,7 @@ catch(ServiceException $e){
 }
         ?>
         
-        <button type="sbumit" onClick="window.location.href='index.php';">Download Result</button>
+        <button type="sbumit" onClick="window.location.href='result.php';">Download Result</button>
         
         
         <script src="assets/js/jquery-1.8.2.min.js"></script>
