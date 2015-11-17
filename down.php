@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['file_name'])){
 	//$file = $_POST['file_name'];
-	$file = "123.jpg";
+	$file = "0e0a443424.jpg";
 	header('Content-Type: image/jpeg');
     header('Content-Disposition:  attachment;  filename= "'.$file.'"'); 
     readfile('upload/'.$file);
