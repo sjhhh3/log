@@ -12,7 +12,7 @@ try {
 }
 
  //设文件名为test.php
-$data=file_get_contents("myblob2");
+$data=file_get_contents("$blob");
 $im = imagecreatefromstring($data);
 if ($im !== false) {
     header('Content-Type: image/jpeg'); //对应jpeg的类型
@@ -23,8 +23,6 @@ else {
     echo '图片未读入';
 }
 
-=========
-然后再另一个html或php中写上<img src='test.php' />显示该图片
 catch(ServiceException $e){
     // Handle exception based on error codes and messages.
     // Error codes and messages are here:
