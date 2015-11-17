@@ -28,30 +28,32 @@
 
         </br></br></br><h1>The Result Is Downloading.</h1></br></br></br>
         
-        <?php
-        require_once 'vendor\autoload.php';
-        use WindowsAzure\Common\ServicesBuilder;
-        use WindowsAzure\Common\ServiceException;
-// Create blob REST proxy.
-$connectionString = 'DefaultEndpointsProtocol=https;AccountName=datab;AccountKey=Gr+c6yEphuffTGSg1tVIKnOchH931afSEmIWoHhWt1aIFPUD7brmTNd2dzNJAWgIZaAa5BTWcXtAjjVwB9wVVQ==';
-$blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
+<?php
 
+// 以二进制格式打开文件
+$name = "myblob2.jpg";
+$fp = fopen($name, 'rb');
 
-try {
-    // Get blob.
-    $blob = $blobRestProxy->getBlob("pic", "myblob2");
-   // header("Content-Type: image/jpg");
-    fpassthru($blob->getContentStream());
-}
-catch(ServiceException $e){
-    // Handle exception based on error codes and messages.
-    // Error codes and messages are here:
-    // http://msdn.microsoft.com/library/azure/dd179439.aspx
-    $code = $e->getCode();
-    $error_message = $e->getMessage();
-    echo $code.": ".$error_message."<br />";
-}
-        ?>
+// 发送合适的报头
+header("Content-Type: image/png");
+header("Content-Length: " . filesize($name));
+
+// 发送图片并终止脚本
+//fpassthru($fp);
+
+ $filename=realpath("$name"); //文件名
+ $date=date("Ymd-H:i:m");
+ Header( "Content-type:  application/octet-stream "); 
+ Header( "Accept-Ranges:  bytes "); 
+ Header( "Accept-Length: " .filesize($filename));
+ header( "Content-Disposition:  attachment;  filename= {$date}.jpg"); 
+ echo file_get_contents($filename);
+ readfile($filename); 
+
+downfile();
+//exit;
+
+?>
 
         
         
