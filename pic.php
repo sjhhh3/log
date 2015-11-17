@@ -3,7 +3,7 @@
    <head>
 
         <meta charset="utf-8">
-        <title>Upload</title>
+        <title>Confirm</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
@@ -26,7 +26,7 @@
             echo '<img src="'.$img.'" alt="图片" />';
 			?>
 
-
+        <h1>Please Confirm Your Image And Click To Upload To The Cloud.</h1>
         <script src="assets/js/jquery-1.8.2.min.js"></script>
         <script src="assets/js/supersized.3.2.7.min.js"></script>
         <script src="assets/js/supersized-init.js"></script>
