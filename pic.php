@@ -26,7 +26,7 @@
             echo '<img src="'.$img.'" alt="图片" />';
 			?>
 
-        <br><br><br><h1>Please Confirm Your Image And Click To Upload To The Cloud.</h1>
+        <br><br><br><h1>This Image Has Alreday Uploaded To The Cloud.</h1>
         
         <?php
         require_once 'vendor\autoload.php';
