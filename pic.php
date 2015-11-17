@@ -52,7 +52,7 @@ catch(ServiceException $e){
 
 if(isset($_POST['file_name'])){
 	//$file = $_POST['file_name'];
-	$file = "afb388e256.jpg";
+	$file = "0e0a443424.jpg";
 	$date=date("Ymd-H:i:m");
 	header('Content-Type: image/jpeg');
     header( "Content-Disposition:  attachment;  filename= {$date}.jpg"); 
