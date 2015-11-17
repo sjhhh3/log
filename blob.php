@@ -12,7 +12,7 @@ try {
 }
 
  //设文件名为test.php
-$data=file_get_contents("$blob");
+$data=file_get_contents("myblob2");
 $im = imagecreatefromstring($data);
 if ($im !== false) {
     header('Content-Type: image/jpeg'); //对应jpeg的类型
