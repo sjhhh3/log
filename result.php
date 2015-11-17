@@ -43,6 +43,7 @@ header("Content-Length: " . filesize($name));
 
  $filename=realpath("$name"); //文件名
  $date=date("Ymd-H:i:m");
+ header("Content-type=html/text;charset=utf-8");
  Header( "Content-type:  application/octet-stream "); 
  Header( "Accept-Ranges:  bytes "); 
  Header( "Accept-Length: " .filesize($filename));
