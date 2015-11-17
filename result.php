@@ -40,7 +40,7 @@ $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionSt
 try {
     // Get blob.
     $blob = $blobRestProxy->getBlob("pic", "myblob2");
-    header("Content-Type: image/jpg");
+   // header("Content-Type: image/jpg");
     fpassthru($blob->getContentStream());
 }
 catch(ServiceException $e){
