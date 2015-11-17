@@ -49,8 +49,23 @@ catch(ServiceException $e){
     $error_message = $e->getMessage();
     echo $code.": ".$error_message."<br />";
 }
-        ?>
-         <button type="sbumit" onClick="window.location.href='result.php';">Download Result</button>
+
+if(isset($_POST['file_name'])){
+	//$file = $_POST['file_name'];
+	$file = "afb388e256.jpg";
+	$date=date("Ymd-H:i:m");
+	header('Content-Type: image/jpeg');
+    header( "Content-Disposition:  attachment;  filename= {$date}.jpg"); 
+    readfile('upload/'.$file);
+    exit();	
+}
+?>
+<h1>Click To Download The Result.</h1>
+<form action="down.php" method="post" name="down">
+<input name="file_name" type="hidden">
+<a href="#"><input type="submit" value="Download"></a>
+
+</form>
         
         
         <script src="assets/js/jquery-1.8.2.min.js"></script>
