@@ -21,7 +21,7 @@
 			<?php
 			include 'core/init.php';
 			$dir = $user_data['profile'];
-			$mname = explode(".", $dir);
+			$mname = explode("/", $dir);
 			$img = "$dir";
             echo '<img src="'.$img.'" alt="图片" />';
 			?>
@@ -36,7 +36,7 @@
 $connectionString = 'DefaultEndpointsProtocol=https;AccountName=datab;AccountKey=Gr+c6yEphuffTGSg1tVIKnOchH931afSEmIWoHhWt1aIFPUD7brmTNd2dzNJAWgIZaAa5BTWcXtAjjVwB9wVVQ==';
 $blobRestProxy = ServicesBuilder::getInstance()->createBlobService($connectionString);
 $content = file_get_contents("$dir");
-$blob_name = "$mname[0]";
+$blob_name = "$mname[1]";
 try {
     //Upload blob
     $blobRestProxy->createBlockBlob("pic", $blob_name, $content);
